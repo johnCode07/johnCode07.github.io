@@ -193,28 +193,26 @@
   </footer>
 
   <!-- JAVASCRIPT FOR PROJECTS -->
-  <script>
-const container = document.getElementById("projects-container");
+  <script type="module">
+  import { projects } from './project-info.js';
 
-fetch('project-info.json') // updated file name
-  .then(response => response.json())
-  .then(projects => {
-    projects.forEach(p => {
-      const projectHTML = `
-        <a class="project-link" href="${p.link}" target="_blank">
-          <div class="project">
-            <img src="${p.img}" alt="${p.title}">
-            <div class="project-details">
-              <div class="project-title">${p.title}</div>
-              <p class="project-desc">${p.desc}</p>
-            </div>
+  const container = document.getElementById("projects-container");
+
+  projects.forEach(p => {
+    const projectHTML = `
+      <a class="project-link" href="${p.link}" target="_blank">
+        <div class="project">
+          <img src="${p.img}" alt="${p.title}">
+          <div class="project-details">
+            <div class="project-title">${p.title}</div>
+            <p class="project-desc">${p.desc}</p>
           </div>
-        </a>
-      `;
-      container.insertAdjacentHTML("beforeend", projectHTML);
-    });
-  })
-  .catch(err => console.error("Error loading project-info.json:", err));
+        </div>
+      </a>
+    `;
+    container.insertAdjacentHTML("beforeend", projectHTML);
+  });
 </script>
+
 </body>
 </html>
