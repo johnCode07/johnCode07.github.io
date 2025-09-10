@@ -1,218 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rehan Maker Portfolio</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      background: #fffbe7;
-      color: #3a2c1a;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rehan Maker Portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background: #f0f0f5;
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+        }
 
-    /* === HERO SECTION === */
-    .hero {
-      position: relative;
-      height: 100vh; /* full screen */
-      width: 100%;
-      overflow: hidden;
-    }
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+        }
+        .hero-img {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(50%);
+        }
+        .hero-text {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 1em;
+        }
+        .hero-text h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+        }
+        .hero-text nav a {
+            margin: 0 1em;
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #ffd700;
+            transition: text-shadow 0.2s;
+        }
+        .hero-text nav a:hover {
+            text-shadow: 0 0 8px #fffacd;
+        }
 
-    .hero-img {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* fills screen without distortion */
-      filter: brightness(60%); /* darkens image for white text contrast */
-    }
+        /* Main Content */
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2em 1em;
+        }
+        section {
+            margin-bottom: 3em;
+        }
 
-    .hero-text {
-      position: relative;
-      z-index: 1;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center; /* center vertically */
-      align-items: center;     /* center horizontally */
-      text-align: center;
-      color: white;
-      padding: 0 1em;
-    }
+        /* About Section */
+        #about h2 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+            color: #4b4b6b;
+        }
+        #about p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
 
-    .hero-text h1 {
-      font-size: 3em;
-      margin-bottom: 0.5em;
-    }
+        /* Projects Section */
+        #projects h2 {
+            font-size: 2em;
+            margin-bottom: 1em;
+            color: #4b4b6b;
+        }
+        .projects-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2em;
+        }
+        .project-link {
+            display: block;
+            text-decoration: none;
+        }
+        .project {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #ffe5d9, #ffd6a5);
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            min-height: 220px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .project img {
+            width: 220px;
+            height: 160px;
+            object-fit: cover;
+            margin-right: 1.5em;
+        }
+        .project-details {
+            flex: 1;
+            padding: 1em;
+        }
+        .project-title {
+            font-size: 1.6em;
+            margin-bottom: 0.5em;
+            color: #d1495b;
+        }
+        .project-desc {
+            font-size: 1.15em;
+            margin-bottom: 1em;
+            color: #6b6b83;
+        }
+        .project-link .project-button {
+            display: inline-block;
+            padding: 0.8em 1.8em;
+            background: #d1495b;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1em;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .project-link .project-button:hover {
+            background: #e36476;
+            transform: scale(1.05);
+        }
 
-    .hero-text nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 1em;
-      font-weight: bold;
-      transition: opacity 0.3s;
-    }
+        /* Contact Section */
+        #contact h2 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+            color: #4b4b6b;
+        }
+        #contact p {
+            font-size: 1.2em;
+        }
+        #contact a {
+            color: #d1495b;
+            font-weight: bold;
+        }
 
-    .hero-text nav a:hover {
-      opacity: 0.7;
-    }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2em 1em;
+            color: #888;
+            font-size: 1em;
+            background: #f5f5f5;
+        }
 
-    /* === MAIN CONTENT === */
-    main {
-      max-width: 900px;
-      margin: 2em auto;
-      background: #fffbe7;
-      border-radius: 16px;
-      box-shadow: 0 4px 24px rgba(244, 208, 143, 0.13);
-      padding: 2em;
-    }
-
-    section {
-      margin-bottom: 2em;
-    }
-
-    /* === PROJECTS === */
-    .projects-container {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5em;
-    }
-
-    .project-link {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      border-radius: 10px;
-    }
-
-    .project {
-      display: flex;
-      align-items: center;
-      background: #f8ecd7;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(244, 208, 143, 0.10);
-      overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .project img {
-      width: 160px;
-      height: 120px;
-      object-fit: cover;
-      margin-right: 1.5em;
-    }
-
-    .project-details {
-      flex: 1;
-      padding: 1em 0;
-    }
-
-    .project-title {
-      font-size: 1.3em;
-      margin: 0 0 0.3em 0;
-      color: #b47b36;
-    }
-
-    .project-desc {
-      margin: 0;
-    }
-
-    .project-link:hover .project {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 16px rgba(244, 208, 143, 0.25);
-    }
-
-    /* === FOOTER === */
-    footer {
-      text-align: center;
-      padding: 1.5em 0;
-      color: #bca77b;
-      font-size: 1em;
-    }
-
-    /* === RESPONSIVE === */
-    @media (max-width: 600px) {
-      .project {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .project img {
-        width: 100%;
-        height: 160px;
-        margin: 0 0 1em 0;
-      }
-    }
-  </style>
+        /* Responsive */
+        @media (max-width: 700px) {
+            .project {
+                flex-direction: column;
+                min-height: auto;
+            }
+            .project img {
+                width: 100%;
+                height: 180px;
+                margin: 0 0 1em 0;
+            }
+            .project-details {
+                padding: 1em 0.5em;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- HERO SECTION -->
-  <header class="hero">
-    <img src="JP.png" alt="pfp" class="hero-img">
-    <div class="hero-text">
-      <h1>Rehan's Maker Portfolio</h1>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        Ive Gyatt all my projects down here, cad links and step files can get downloaded
-      </p>
-    </section>
-
-    <section id="projects">
-      <h2>Featured Projects</h2>
-      <div class="projects-container" id="projects-container">
-        <!-- Projects will be generated here by JS -->
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        Contacts and that <br>
-        <a href="mailto:rehanbhargava28@gmail.com">Email me</a> or find me on 
-        <a href="https://github.com/" target="_blank">GitHub</a>.
-      </p>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    &copy; 2025 Rehan Bhargava. Made with HTML &amp; CSS.
-  </footer>
-
-  <!-- JAVASCRIPT FOR PROJECTS -->
-  <script type="module">
-  import { projects } from './project-info.js';
-
-  const container = document.getElementById("projects-container");
-
-  projects.forEach(p => {
-    const projectHTML = `
-      <a class="project-link" href="${p.link}" target="_blank">
-        <div class="project">
-          <img src="${p.img}" alt="${p.title}">
-          <div class="project-details">
-            <div class="project-title">${p.title}</div>
-            <p class="project-desc">${p.desc}</p>
-          </div>
+    <!-- Hero Section -->
+    <header class="hero">
+        <img src="JP.png" alt="Hero Image" class="hero-img">
+        <div class="hero-text">
+            <h1>Rehan's Maker Portfolio</h1>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
-      </a>
-    `;
-    container.insertAdjacentHTML("beforeend", projectHTML);
-  });
-</script>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                Welcome! Here you'll find all my projects, including CAD models, 3D prints, and robotics prototypes.
+            </p>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects-container" id="projects-container">
+                <!-- Projects will load here from project-info.js -->
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>
+                Reach out via <a href="mailto:rehanbhargava28@gmail.com">Email</a> or find me on <a href="https://github.com/" target="_blank">GitHub</a>.
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Rehan Bhargava. Made with HTML & CSS.
+    </footer>
+
+    <!-- Project Data Script -->
+    <script type="module">
+        import { projects } from './project-info.js';
+
+        const container = document.getElementById("projects-container");
+
+        projects.forEach(p => {
+            const projectHTML = `
+                <a class="project-link" href="${p.link}" target="_blank">
+                    <div class="project">
+                        <img src="${p.img}" alt="${p.title}">
+                        <div class="project-details">
+                            <div class="project-title">${p.title}</div>
+                            <p class="project-desc">${p.desc}</p>
+                            <span class="project-button">View Project</span>
+                        </div>
+                    </div>
+                </a>
+            `;
+            container.insertAdjacentHTML("beforeend", projectHTML);
+        });
+    </script>
 
 </body>
 </html>
