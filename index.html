@@ -9,39 +9,58 @@
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
-      background: linear-gradient(135deg, #fdf6e3 0%, #f5e9da 100%);
+      background: #fffbe7;
       color: #3a2c1a;
     }
-    header {
-      background: #302f2f;
-      color: #f2ebeb;
-      padding: 2rem 0 1rem 0;
+
+    /* === HERO SECTION === */
+    .hero {
+      position: relative;
+      height: 100vh; /* full screen */
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .hero-img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* fills screen without distortion */
+      filter: brightness(60%); /* darkens image for white text contrast */
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* center vertically */
+      align-items: center;     /* center horizontally */
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      color: white;
+      padding: 0 1em;
     }
-    header img {
-      width: 100px;
-      border-radius: 50%;
-      border: 4px solid #fff8e1;
-      margin-bottom: 1rem;
+
+    .hero-text h1 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
     }
-    h1 {
-      margin: 0.2em 0 0.1em 0;
-      font-size: 2.5em;
-    }
-    nav {
-      margin: 1em 0;
-    }
-    nav a {
-      color: #b47b36;
+
+    .hero-text nav a {
+      color: white;
       text-decoration: none;
       margin: 0 1em;
       font-weight: bold;
-      transition: text-shadow 0.2s;
+      transition: opacity 0.3s;
     }
-    nav a:hover {
-      text-shadow: 0 0 5px #fffbe7;
+
+    .hero-text nav a:hover {
+      opacity: 0.7;
     }
+
+    /* === MAIN CONTENT === */
     main {
       max-width: 900px;
       margin: 2em auto;
@@ -50,24 +69,25 @@
       box-shadow: 0 4px 24px rgba(244, 208, 143, 0.13);
       padding: 2em;
     }
+
     section {
       margin-bottom: 2em;
     }
 
-    /* Projects container */
+    /* === PROJECTS === */
     .projects-container {
       display: flex;
       flex-direction: column;
-      gap: 1.5em; /* space between project cards */
+      gap: 1.5em;
     }
 
-    /* Project card */
     .project-link {
       display: block;
       text-decoration: none;
       color: inherit;
       border-radius: 10px;
     }
+
     .project {
       display: flex;
       align-items: center;
@@ -77,30 +97,35 @@
       overflow: hidden;
       transition: transform 0.2s, box-shadow 0.2s;
     }
+
     .project img {
       width: 160px;
       height: 120px;
       object-fit: cover;
       margin-right: 1.5em;
-      border-radius: 0 10px 10px 0;
     }
+
     .project-details {
       flex: 1;
       padding: 1em 0;
     }
+
     .project-title {
       font-size: 1.3em;
       margin: 0 0 0.3em 0;
       color: #b47b36;
     }
+
     .project-desc {
       margin: 0;
     }
+
     .project-link:hover .project {
       transform: translateY(-4px);
       box-shadow: 0 6px 16px rgba(244, 208, 143, 0.25);
     }
 
+    /* === FOOTER === */
     footer {
       text-align: center;
       padding: 1.5em 0;
@@ -108,6 +133,7 @@
       font-size: 1em;
     }
 
+    /* === RESPONSIVE === */
     @media (max-width: 600px) {
       .project {
         flex-direction: column;
@@ -117,22 +143,25 @@
         width: 100%;
         height: 160px;
         margin: 0 0 1em 0;
-        border-radius: 10px 10px 0 0;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="JP.png" alt="pfp">
-    <h1>Rehan's Maker Portfolio</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <img src="JP.png" alt="pfp" class="hero-img">
+    <div class="hero-text">
+      <h1>Rehan's Maker Portfolio</h1>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main>
     <section id="about">
       <h2>About Me</h2>
@@ -144,7 +173,7 @@
     <section id="projects">
       <h2>Featured Projects</h2>
       <div class="projects-container" id="projects-container">
-        <!-- Projects will be generated here -->
+        <!-- Projects will be generated here by JS -->
       </div>
     </section>
 
@@ -158,11 +187,12 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     &copy; 2025 Rehan Bhargava. Made with HTML &amp; CSS.
   </footer>
 
-  <!-- Script to generate projects -->
+  <!-- JAVASCRIPT FOR PROJECTS -->
   <script>
     const projects = [
       {
@@ -183,7 +213,7 @@
         img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
         link: "https://github.com/rehan/3d-desk-organizer"
       }
-      // 👉 Add more projects here by just adding another object
+      // 👉 Add more projects here by adding another object
     ];
 
     const container = document.getElementById("projects-container");
