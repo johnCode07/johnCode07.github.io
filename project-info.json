@@ -1,0 +1,20 @@
+[
+      {
+        title: "Robotics Turret Design",
+        desc: "Prototype Turret design for 2026 FRC game",
+        img: "Turretv1.png",
+        link: "https://cad.onshape.com/documents/dad9a5143e948fa790757cbd/w/f9912f3b918c5744adae4bed/e/58a58bbf9e93fa3f64d450c1?renderMode=0&uiState=68c19fd20d1b1cd3fd924e07"
+      },
+      {
+        title: "FRC Reefscape Offseason Bot",
+        desc: "Concept robot for the 2025 FRC game, REEFSCAPE, ground intake, low-scoring L1 Arm. Wiring and Climb Omitted thus far.",
+        img: "",
+        link: "https://github.com/rehan/portfolio-website"
+      },
+      {
+        title: "3D Printed Desk Organizer",
+        desc: "Designed and printed a modular desk organizer using Tinkercad and a 3D printer. Keeps my workspace tidy and efficient.",
+        img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
+        link: "https://github.com/rehan/3d-desk-organizer"
+      }
+    ]
