@@ -1,0 +1,21 @@
+// project-info.js
+export const projects = [
+  {
+    title: "Robotics Turret Design",
+    desc: "Prototype Turret design for 2026 FRC game",
+    img: "Turretv1.png",
+    link: "https://cad.onshape.com/..."
+  },
+  {
+    title: "FRC Reefscape Offseason Bot",
+    desc: "Concept robot for the 2025 FRC game",
+    img: "",
+    link: "https://github.com/rehan/portfolio-website"
+  },
+  {
+    title: "3D Printed Desk Organizer",
+    desc: "Designed and printed a modular desk organizer using Tinkercad and a 3D printer.",
+    img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
+    link: "https://github.com/rehan/3d-desk-organizer"
+  }
+];
