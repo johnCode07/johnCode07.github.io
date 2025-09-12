@@ -13,6 +13,12 @@ export const projects = [
     link: "https://github.com/rehan/portfolio-website"
   },
   {
+    title: "poop",
+    desc: "scoop",
+    img: "",
+    link: "https://github.com/rehan/portfolio-website"
+  },
+  {
     title: "Terrabot",
     desc: "Programmed self sustaining gardening robot that takes data from sensors to optimize growth conditions",
     img: "",
