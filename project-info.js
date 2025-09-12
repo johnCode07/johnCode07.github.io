@@ -13,8 +13,14 @@ export const projects = [
     link: "https://github.com/rehan/portfolio-website"
   },
   {
-    title: "3D Printed Desk Organizer",
-    desc: "Designed and printed a modular desk organizer using Tinkercad and a 3D printer.",
+    title: "Terrabot",
+    desc: "Programmed self sustaining gardening robot that takes data from sensors to optimize growth conditions",
+    img: "",
+    link: "https://github.com/rehan/portfolio-website"
+  },
+  {
+    title: "Frc Reefscape Elevator",
+    desc: "Designed and fabricated 5895 Jormungandr 2 stage belt driven elevator, which went on to win our division at worlds",
     img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
     link: "https://github.com/rehan/3d-desk-organizer"
   }
