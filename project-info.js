@@ -14,8 +14,8 @@ export const projects = [
   },
   {
     title: "Terrabot",
-    desc: "Programmed self sustaining gardening robot that takes data from sensors to optimize growth conditions",
-    img: "",
+    desc: "Programmed self sustaining gardening robot that takes data from sensors to optimize growth conditions (Based on CMU ROB course)",
+    img: "Terrabot.png",
     link: "awaiting"
   },
   {
