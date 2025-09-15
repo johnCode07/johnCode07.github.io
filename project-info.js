@@ -13,12 +13,6 @@ export const projects = [
     link: "https://cad.onshape.com/documents/66549edfba56524834dc1d6f/w/15077c65e03286e083abeeae/e/7aabf745f93416db886b7b8a?renderMode=0&uiState=68c8333d10ef7f9435a7fb20"
   },
   {
-    title: "poop",
-    desc: "scoop",
-    img: "",
-    link: "https://github.com/rehan/portfolio-website"
-  },
-  {
     title: "Terrabot",
     desc: "Programmed self sustaining gardening robot that takes data from sensors to optimize growth conditions",
     img: "",
